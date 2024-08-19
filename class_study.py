@@ -1,4 +1,53 @@
 """
+可視性の具体例
++ public
+
+説明: 全てのクラスから参照可能な属性や操作。
+例:
+"""
+class Book {
+    public String title;  // すべてのクラスから参照可能
+}
+# titleはpublicなので、他のクラスからも直接アクセス可能です。
+"""
+– private
+
+説明: 同じクラス内でのみ参照可能な属性や操作。
+例:
+"""
+class Book {
+    private String ISBN;  // 同じクラス内のみ参照可能
+}
+# ISBNはprivateなので、Bookクラス内でしかアクセスできません。
+"""
+# protected
+
+説明: 自クラスおよびその派生クラスでのみ参照可能な属性や操作。
+例:
+"""
+class Book {
+    protected String author;  // Bookクラスとそのサブクラスから参照可能
+}
+
+class EBook extends Book {
+    void displayAuthor() {
+        System.out.println(author);  // サブクラス内で参照可能
+    }
+}
+# authorはprotectedなので、BookクラスとEBookクラス（Bookのサブクラス）から参照できます。
+
+"""
+~ package
+
+説明: 同じパッケージ内でのみ参照可能な属性や操作。
+例:
+"""
+class Book {
+    String publisher;  // デフォルトの可視性（パッケージプライベート）
+}
+# publisherはパッケージプライベートなので、同じパッケージ内のクラスからのみアクセス可能です。
+
+"""
 関連: EmployeeクラスはDepartmentクラスと関連しています。
 Departmentは複数のEmployeeを持ちます。
 
