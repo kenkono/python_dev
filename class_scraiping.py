@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 from datetime import datetime
 import xml.etree.ElementTree as ET
+from Constants import constants  # 定数をインポート
 
 class RSSScraper:
     def __init__(self):
@@ -41,7 +42,7 @@ class DateManager:
         return f"{base_name}_{current_date}.csv"
 
 def main():
-    rss_url = "http://xml.keizaireport.com/rss/node_15.xml"
+    rss_url = constants.RSS_URL  # 定数を使用
 
     rss_scraper = RSSScraper()
     date_manager = DateManager()
